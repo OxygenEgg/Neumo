@@ -32,6 +32,7 @@ function createWindow() {
         title: "Neumo",
         height: 810,
         width: 1440,
+        backgroundColor: "#e596c8",
         webPreferences: {
             preload: path.join(__dirname, "preload.mjs"),
         },
