@@ -1,0 +1,44 @@
+@use "sass:color";
+
+// sizes
+$font-size: 24px;
+$header-height: 2.15rem;
+
+// colors
+$color-neutral-purple: #5400ff;
+$color-vibrant-blue: #4fe5ff;
+
+$dark-foreground: #ffffff;
+$dark-background: #121212;
+$bright-foreground: #ffffff;
+$bright-bagkround: #ffffff;
+$dark-gray: #212121;
+$border-gray: rgba(255, 255, 255, 0.15);
+
+$accent: color.adjust(#1a6937, $saturation: 100%, $lightness: 50%);
+$brat: #0abb82;
+
+$polaris: #0096a7;
+$dark-polaris: color.adjust($polaris, $saturation: -95%, $lightness: -16%);
+
+// corners
+$small-radius: 8px;
+$medium-radius: 12px;
+$large-radius: 16px;
+
+// borders
+$general-border: $border-gray 1px solid;
+
+// shadows
+$shadow: -4px 4px 4px rgba(0,0,0,0.1);
+
+// margins
+$small-margin: 8px;
+$medium-margin: 12px;
+$large-margin: 16px;
+
+$panel-gap: 0.5rem;
+
+// font families
+$font-ui: "Circular Std Bold", Segoe UI, Arial, Helvetica, sans-serif;
+$font-text: "Circular Std Bold", Arial, Helvetica, sans-serif;

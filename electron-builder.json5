@@ -1,9 +1,10 @@
 // @see - https://www.electron.build/configuration/configuration
 {
   "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  "appId": "YourAppID",
+  "appId": "com.oxygenegg.neumo",
   "asar": true,
-  "productName": "YourAppName",
+  "productName": "Neumo",
+  "copyright": "Copyright © 2025 ${author}",
   "directories": {
     "output": "release/${version}"
   },
@@ -17,7 +18,14 @@
     ],
     "artifactName": "${productName}-Mac-${version}-Installer.${ext}"
   },
+  "linux": {
+    "target": [
+      "AppImage"
+    ],
+    "artifactName": "${productName}-Linux-${version}.${ext}"
+  },
   "win": {
+    "icon": "public/mwNeumo.ico",
     "target": [
       {
         "target": "nsis",
@@ -26,18 +34,16 @@
         ]
       }
     ],
-    "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
+    "artifactName": "${productName}-Win-x64-${version}-Setup.${ext}"
   },
   "nsis": {
     "oneClick": false,
     "perMachine": false,
     "allowToChangeInstallationDirectory": true,
-    "deleteAppDataOnUninstall": false
-  },
-  "linux": {
-    "target": [
-      "AppImage"
-    ],
-    "artifactName": "${productName}-Linux-${version}.${ext}"
+    "deleteAppDataOnUninstall": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "installerIcon": "public/mwNeumo.ico",
+    "uninstallerIcon": "public/mwBlack.ico"
   }
 }
