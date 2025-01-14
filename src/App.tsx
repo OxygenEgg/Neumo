@@ -3,7 +3,8 @@ import Header from "@/components/header";
 import "@/App.scss";
 import MusikView from "@/views/musik";
 import { useViewStore } from "@/store/useViewStore.ts";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
+import WindowControls from "@/components/windowControls";
 
 const App = () => {
     const currentView = useViewStore((state) => state.currentView);
@@ -18,7 +19,7 @@ const App = () => {
 
     return (
         <>
-            <Header />
+            <WindowControls />
             {viewContent}
         </>
     );

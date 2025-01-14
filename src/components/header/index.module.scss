@@ -5,40 +5,48 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: rgba(200, 200, 200, 0.25);
+  align-items: center;
+  background: rgb(200 200 200 / 25%);
   backdrop-filter: blur(12px);
   height: $header-height;
-  margin: 0 auto;
-  padding: $panel-gap;
+  padding: $header-height;
   border-bottom: $general-border;
   overflow: hidden;
+  app-region: drag;
+  font-family: $font-ui;
+  font-size: $header-height;
+
 
   &__navLinks {
-    gap: $panel-gap;
-    display: flex;
-    font-size: 1rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    grid-area: span center;
+    gap: $item-gap;
+    display: flex;
+    app-region: no-drag;
 
-    > * {
-      background: rgba(255, 255, 255, 0.25); // transparentize(white, 0.75); //transparentize(color.adjust($accent, $lightness: -20%), 0.75);  // transparentize(#0096A7, 0.75);
+    &__Link {
+      background: rgb(255 255 255 / 25%); // transparentize(white, 0.75); //transparentize(color.adjust($accent, $lightness: -20%), 0.75);  // transparentize(#0096A7, 0.75);
       backdrop-filter: blur(18px);
       border: $general-border;
       color: $bright-foreground;
-      padding: 0.4rem;
       border-radius: $small-radius;
       transition: 0.1s ease-in-out;
       box-shadow: $shadow;
+      font-family: inherit;
+      font-size: 0.75em;
+
+      &__Button {
+      }
     }
 
     > *:hover {
       color: $accent;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgb(255 255 255 / 50%);
     }
 
     > *:hover {
@@ -47,25 +55,42 @@
   }
 
   &__logoContainer {
+    position: absolute;
+    left: $panel-gap;
+    grid-area: span left;
     display: flex;
     float: left;
     cursor: pointer;
+    height: 100%;
+    background: rgb(255 255 255 / 25%); // transparentize(white, 0.75); //transparentize(color.adjust($accent, $lightness: -20%), 0.75);  // transparentize(#0096A7, 0.75);
+    backdrop-filter: blur(18px);
+    border: $general-border;
+    border-radius: $small-radius;
+    box-shadow: $shadow;
+    app-region: no-drag;
 
     :active {
       transform: scale(0.95);
       transition: 0.05s ease-in-out;
     }
   }
+
+  &__WindowControls {
+    position: absolute;
+    right: $panel-gap;
+    grid-area: span right;
+    background: yellowgreen;
+  }
 }
 
 .logo {
-  margin: 0 $panel-gap 0 1px;  // TODO: really 1px??
-  width: 2rem;
+  width: 0.5rem;
   height: auto;
+  -webkit-user-drag: none;
 }
 
 .active {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(255 255 255 / 50%);
 
   > * {
     color: $accent;

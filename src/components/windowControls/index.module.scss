@@ -1,0 +1,69 @@
+@use "@/variables" as *;
+
+.windowControls {
+  height: 1.28rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  app-region: drag;
+  background: rgb(255 255 255 / 25%);
+  border-bottom: $general-border;
+
+  &__LogoContainer {
+    left: $panel-gap;
+    display: flex;
+    cursor: pointer;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left: 0.2rem;
+    background: rgb(255 255 255 / 25%); // transparentize(white, 0.75); //transparentize(color.adjust($accent, $lightness: -20%), 0.75);  // transparentize(#0096A7, 0.75);
+    backdrop-filter: blur(18px);
+    border: $general-border;
+    border-radius: $small-radius;
+    box-shadow: $shadow;
+    app-region: no-drag;
+    align-items: center;
+    justify-content: center;
+
+    &__Logo {
+      height: 0.5rem;
+      width: auto;
+      -webkit-user-drag: none;
+    }
+  }
+
+  &__Controls {
+    display: flex;
+    margin-right: 0.05rem;
+    app-region: no-drag;
+
+    &__Button {
+      padding: 0 0.15rem;
+      background: none;
+      border: none;
+
+      :active {
+        transform: scale(0.95);
+        transition: 0.05s ease-in-out;
+      }
+
+      &__Label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(255 255 255 / 25%); // transparentize(white, 0.75); //transparentize(color.adjust($accent, $lightness: -20%), 0.75);  // transparentize(#0096A7, 0.75);
+        backdrop-filter: blur(18px);
+        border: $general-border;
+        color: $bright-foreground;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50px;
+        transition: 0.1s ease-in-out;
+        box-shadow: $shadow;
+        font-family: $fluent-icons;
+        font-size: 0.3rem;
+      }
+    }
+  }
+}

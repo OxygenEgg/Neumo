@@ -1,7 +1,7 @@
 import path from "node:path";
 // import { createRequire } from 'node:module'
 import { fileURLToPath } from "node:url";
-import { BrowserWindow, app } from "electron";
+import { BrowserWindow, app, ipcMain } from "electron";
 
 // const require = createRequire(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -33,6 +33,7 @@ function createWindow() {
         height: 810,
         width: 1440,
         backgroundColor: "#e596c8",
+        titleBarStyle: "hidden",
         webPreferences: {
             preload: path.join(__dirname, "preload.mjs"),
         },
@@ -52,6 +53,22 @@ function createWindow() {
     }
 
     win.setMenuBarVisibility(false);
+
+    ipcMain.on("window:minimize", () => {
+        win?.minimize();
+    });
+
+    ipcMain.on("window:maximize", () => {
+        if (win?.isMaximized()) {
+            win?.unmaximize();
+        } else {
+            win?.maximize();
+        }
+    });
+
+    ipcMain.on("window:close", () => {
+        win?.close();
+    });
 }
 
 // Quit when all windows are closed, except on macOS. There, it's common

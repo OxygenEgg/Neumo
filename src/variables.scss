@@ -2,22 +2,20 @@
 
 // sizes
 $font-size: 24px;
-$header-height: 2.15rem;
+$header-height: 0.75rem;
+$window-controls-height: $header-height;
 
 // colors
 $color-neutral-purple: #5400ff;
 $color-vibrant-blue: #4fe5ff;
-
-$dark-foreground: #ffffff;
+$dark-foreground: #fff;
 $dark-background: #121212;
-$bright-foreground: #ffffff;
-$bright-bagkround: #ffffff;
+$bright-foreground: #fff;
+$bright-bagkround: #fff;
 $dark-gray: #212121;
-$border-gray: rgba(255, 255, 255, 0.15);
-
+$border-gray: rgb(255 255 255 / 15%);
 $accent: color.adjust(#1a6937, $saturation: 100%, $lightness: 50%);
 $brat: #0abb82;
-
 $polaris: #0096a7;
 $dark-polaris: color.adjust($polaris, $saturation: -95%, $lightness: -16%);
 
@@ -30,15 +28,16 @@ $large-radius: 16px;
 $general-border: $border-gray 1px solid;
 
 // shadows
-$shadow: -4px 4px 4px rgba(0,0,0,0.1);
+$shadow: -4px 4px 4px rgb(0 0 0 / 10%);
 
 // margins
-$small-margin: 8px;
-$medium-margin: 12px;
-$large-margin: 16px;
-
-$panel-gap: 0.5rem;
+$small-margin: 0.6rem;
+$medium-margin: 0.8rem;
+$large-margin: 1rem;
+$panel-gap: 0.75rem;
+$item-gap: $header-height * 0.5;
 
 // font families
-$font-ui: "Circular Std Bold", Segoe UI, Arial, Helvetica, sans-serif;
-$font-text: "Circular Std Bold", Arial, Helvetica, sans-serif;
+$font-ui: "Circular Std Bold", segoe ui, arial, helvetica, sans-serif;
+$font-text: "Circular Std Bold", arial, helvetica, sans-serif;
+$fluent-icons: "Segoe Fluent Icons";
