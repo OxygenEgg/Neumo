@@ -13,7 +13,7 @@ const SettingsView = () => {
             <h1>SETTINGS</h1>
             <button onClick={() => resetAllSettings()}>Reset</button>
             <div>
-                <TextInput label={"ID"} value={ip} onChange={(e) => setHueIP(e.target.value)} />
+                <TextInput label={"IP address of the Hue Box"} value={ip} onChange={(e) => setHueIP(e.target.value)} />
             </div>
         </main>
     );

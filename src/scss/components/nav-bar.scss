@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .navbar-container {
+  grid-area: navbar;
   width: auto;
   background: transparent;
   backdrop-filter: $general-backdrop-filter;
@@ -12,7 +13,7 @@
   border-bottom: $general-border;
   border-top-right-radius: $medium-radius;
   border-bottom-right-radius: $medium-radius;
-  box-shadow: $thick-shadow;
+  box-shadow: $thick-shadow, $thick-inner-shadow;
 }
 
 .navbar-top, .navbar-bottom {
@@ -29,7 +30,7 @@
   border-radius: $small-radius;
   place-self: center center;
   margin: calc($gap / 2) $gap 0;
-  box-shadow: $shadow;
+  box-shadow: $shadow, $inner-shadow;
   font-size: $font-size;
   font-family: $fluent-icons;
 

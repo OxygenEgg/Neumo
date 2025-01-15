@@ -10,18 +10,23 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
   overflow: auto;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  width: inherit;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgb(255 255 255 / 50%);
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-radius: 50px;
+  width: 50px;
+
+  &:hover {
+    background: rgb(255 255 255 / 75%);
+  }
 }
 
 ::-webkit-scrollbar-button {
@@ -29,25 +34,31 @@
 }
 
 body {
-  height: calc(100vh - $gap);
+  height: 100vh;
   margin: 0;
   padding: 0;
   color: $dark-foreground;
-  background-image: url("@/assets/neumo.png");
+  background-image: url("@/assets/neumoDarkerDesat.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   font-family: $font-text;
-  text-shadow: $shadow;
+  text-shadow: $text-shadow;
 
   // font-size: 1em;
 }
 
 #root {
   display: grid;
-  grid-template: "titlebar titlebar" $window-controls-height "navbar main" auto / $navbar-height auto;
-  grid-gap: $gap;
+  grid-template-rows: $window-controls-height $gap auto $gap;
+  grid-template-columns: $navbar-height $gap auto $gap;
+  grid-template-areas:
+          "titlebar titlebar titlebar titlebar"
+          "gap-top gap-top gap-top gap-top"
+          "navbar gap-left main gap-right"
+          "gap-bottom gap-bottom gap-bottom gap-bottom";
+  grid-gap: 0;
   height: 100%;
 }
 
@@ -57,7 +68,12 @@ h1 {
 }
 
 main {
+  padding: $gap;
   grid-area: main;
   border-radius: $small-radius;
   overflow-y: auto;
+  box-shadow: $thick-shadow, $thick-inner-shadow;
+  backdrop-filter: $general-backdrop-filter;
+  border: $general-border;
+  font-size: 0.75rem;
 }

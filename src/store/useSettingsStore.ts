@@ -8,6 +8,14 @@ export const useSettingsStore = create(
         (set) => ({
             ...DEFAULT_SETTINGS,
 
+            setUiScaling: (uiScaling) =>
+                set((state) => ({
+                    generalSettings: {
+                        ...state.generalSettings,
+                        uiScaling,
+                    },
+                })),
+
             setHueIP: (ip) =>
                 set((state) => ({
                     hueSettings: {
@@ -15,6 +23,7 @@ export const useSettingsStore = create(
                         ip,
                     },
                 })),
+
             resetAllSettings: () => {
                 set(DEFAULT_SETTINGS);
             },
