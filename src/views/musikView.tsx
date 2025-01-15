@@ -1,5 +1,3 @@
-import LoremIpsum from "@/components/loremIpsum.tsx";
-
 const MusikView = () => {
     return (
         <main>
