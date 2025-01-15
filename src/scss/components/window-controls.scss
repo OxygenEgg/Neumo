@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.window-controls-container {
+  box-shadow: $thick-shadow;
+  grid-area: titlebar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  app-region: drag;
+  background: transparent;
+  backdrop-filter: $general-backdrop-filter;
+  border-bottom: $general-border;
+}
+
+.window-controls {
+  display: flex;
+  margin-right: 0.05rem;
+  app-region: no-drag;
+}
+
+.window-controls-button {
+  padding: 0 0.15rem;
+  background: none;
+  border: none;
+
+  &:active {
+    transform: scale(0.95);
+    transition: 0.05s ease-in-out;
+  }
+}
+
+.window-controls-button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 25%);
+  backdrop-filter: blur(18px);
+  border: $general-border;
+  color: $bright-foreground;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50px;
+  transition: 0.1s ease-in-out;
+  box-shadow: $shadow;
+  font-family: $fluent-icons;
+  font-size: 0.3rem;
+
+  &:hover {
+    color: $accent;
+    background-color: rgb(255 255 255 / 50%);
+    transition: 0.1s ease-in-out;
+  }
+}
+
+.window-controls-logo {
+  margin-left: 0.25rem;
+  display: flex;
+  height: 0.8rem;
+  width: auto;
+  place-self: center center;
+  -webkit-user-drag: none;
+}

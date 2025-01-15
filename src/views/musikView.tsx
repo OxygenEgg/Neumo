@@ -1,12 +1,10 @@
+import LoremIpsum from "@/utils/loremIpsum.tsx";
+
 const MusikView = () => {
     return (
         <main>
             <h1>MUSIK IST ALLES</h1>
-            <p>alles</p>
-            <p>alles alles</p>
-            <h2>
-                <i>dideldi</i>
-            </h2>
+            <LoremIpsum />
         </main>
     );
 };

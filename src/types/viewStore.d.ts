@@ -1,4 +1,4 @@
-type View = "Home" | "Musik";
+type View = "Home" | "Musik" | "Hue" | "Settings";
 
 interface ViewStore {
     currentView: View;

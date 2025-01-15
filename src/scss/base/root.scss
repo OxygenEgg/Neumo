@@ -1,0 +1,63 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+:root {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size;
+  overflow: hidden;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 50%);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+body {
+  height: calc(100vh - $gap);
+  margin: 0;
+  padding: 0;
+  color: $dark-foreground;
+  background-image: url("@/assets/neumo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: $font-text;
+  text-shadow: $shadow;
+
+  // font-size: 1em;
+}
+
+#root {
+  display: grid;
+  grid-template: "titlebar titlebar" $window-controls-height "navbar main" auto / $navbar-height auto;
+  grid-gap: $gap;
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  color: $accent;
+}
+
+main {
+  grid-area: main;
+  border-radius: $small-radius;
+  overflow-y: auto;
+}

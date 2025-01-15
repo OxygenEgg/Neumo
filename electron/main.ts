@@ -69,6 +69,10 @@ function createWindow() {
     ipcMain.on("window:close", () => {
         win?.close();
     });
+
+    ipcMain.on("window:reload", () => {
+        win?.reload();
+    });
 }
 
 // Quit when all windows are closed, except on macOS. There, it's common

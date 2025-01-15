@@ -2,8 +2,8 @@
 
 // sizes
 $font-size: 24px;
-$header-height: 0.75rem;
-$window-controls-height: $header-height;
+$window-controls-height: 1.28rem;
+$navbar-height: 2.75rem;
 
 // colors
 $color-neutral-purple: #5400ff;
@@ -28,16 +28,20 @@ $large-radius: 16px;
 $general-border: $border-gray 1px solid;
 
 // shadows
-$shadow: -4px 4px 4px rgb(0 0 0 / 10%);
+// $shadow: -4px 4px 4px rgb(0 0 0 / 10%);
+$thick-shadow: 0 0 0.4rem rgb(0 0 0 / 16%);
+$shadow: $thick-shadow;
 
 // margins
 $small-margin: 0.6rem;
 $medium-margin: 0.8rem;
 $large-margin: 1rem;
-$panel-gap: 0.75rem;
-$item-gap: $header-height * 0.5;
+$gap: 0.75rem;
 
 // font families
 $font-ui: "Circular Std Bold", segoe ui, arial, helvetica, sans-serif;
 $font-text: "Circular Std Bold", arial, helvetica, sans-serif;
 $fluent-icons: "Segoe Fluent Icons";
+
+// other
+$general-backdrop-filter: opacity(2) blur(1rem) saturate(0.9) brightness(1.1) contrast(1.25);

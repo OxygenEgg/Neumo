@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.navbar-container {
+  width: auto;
+  background: transparent;
+  backdrop-filter: $general-backdrop-filter;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: $general-border;
+  border-right: $general-border;
+  border-bottom: $general-border;
+  border-top-right-radius: $medium-radius;
+  border-bottom-right-radius: $medium-radius;
+  box-shadow: $thick-shadow;
+}
+
+.navbar-top, .navbar-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-navlink {
+  background: rgb(255 255 255 / 25%);
+  color: $bright-foreground;
+  height: calc($navbar-height - 0.75rem);
+  width: calc($navbar-height - 0.75rem);
+  border: $general-border;
+  border-radius: $small-radius;
+  place-self: center center;
+  margin: calc($gap / 2) $gap 0;
+  box-shadow: $shadow;
+  font-size: $font-size;
+  font-family: $fluent-icons;
+
+  &:hover {
+    // transform: scale(1.05);
+    color: $accent;
+    background-color: rgb(255 255 255 / 50%);
+    transition: 0.1s ease-in-out;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: 0.01s ease-in-out;
+  }
+}
+
+.navbar-bottom .navbar-navlink {
+  margin: 0 $gap calc($gap / 2);
+}
